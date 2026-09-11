@@ -17,7 +17,7 @@ import {
 import { useAuth } from '../../context/AuthContext';
 import { Avatar } from '../common/Avatar';
 import { PostCarousel } from './PostCarousel';
-import { useData } from '../../context/DataCOntext.jsx';
+import { useData } from '../../context/DataContext';
 
 export const PostCard = ({
   post,

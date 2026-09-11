@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useData } from '../context/DataCOntext';
+import { useData } from '../context/DataContext';
 import { PostCard } from '../components/posts/PostCard';
 import { StoryBar } from '../components/stories/StoryBar';
 import { RightPanel } from '../components/layout/RightPanel';

@@ -3,7 +3,7 @@ import { Search, X, Music, Check, Volume2 } from 'lucide-react';
 import { musicService } from '../../services/musicService';
 import { songService } from '../../services/songService';
 import { useAuth } from '../../context/AuthContext';
-import { useData } from '../../context/DataCOntext';
+import { useData } from '../../context/DataContext';
 import { SongCard } from './SongCard';
 
 const CATEGORIES = ['All', 'Trending', 'Popular', 'Recently Used', 'Saved', 'Recommended'];

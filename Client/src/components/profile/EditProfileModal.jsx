@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Modal } from '../common/Modal';
 import { Button } from '../common/Button';
 import { Avatar } from '../common/Avatar';
-import { useData } from '../../context/DataCOntext.jsx';
+import { useData } from '../../context/DataContext';
 
 export const EditProfileModal = ({ user, isOpen, onClose }) => {
   const { updateUserProfile } = useData();

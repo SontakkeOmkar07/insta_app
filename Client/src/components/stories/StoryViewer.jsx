@@ -27,7 +27,7 @@ import {
   Radio,
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
-import { useData } from '../../context/DataCOntext';
+import { useData } from '../../context/DataContext';
 import { Avatar } from '../common/Avatar';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { musicService } from '../../services/musicService';

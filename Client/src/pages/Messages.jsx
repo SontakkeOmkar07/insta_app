@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Search, Send } from "lucide-react";
-import { useData } from "../context/DataCOntext";
+import { useData } from "../context/DataContext";
 import { useAuth } from "../context/AuthContext";
 import { Avatar } from "../components/common/Avatar";
 import { useNavigate } from "react-router-dom";

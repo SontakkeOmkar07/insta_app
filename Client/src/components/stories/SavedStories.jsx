@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Bookmark, Play, Music, Image as ImageIcon, Film, FileText, Trash2 } from 'lucide-react';
-import { useData } from '../../context/DataCOntext';
+import { useData } from '../../context/DataContext';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useData } from '../context/DataCOntext';
+import { useData } from '../context/DataContext';
 import { Heart, MessageCircle, Compass } from 'lucide-react';
 import { CommentSection } from '../components/posts/CommentSection';
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
   Plus,
@@ -17,7 +17,7 @@ import {
   UserCheck,
   Search,
 } from 'lucide-react';
-import { useData } from '../context/DataCOntext';
+import { useData } from '../context/DataContext';
 import { CreateStoryModal } from '../components/stories/CreateStoryModal';
 import { MusicSelector } from '../components/music/MusicSelector';
 import { SavedStories } from '../components/stories/SavedStories';

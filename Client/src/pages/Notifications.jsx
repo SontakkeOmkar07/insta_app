@@ -1,5 +1,5 @@
 import React from 'react';
-import { useData } from '../context/DataCOntext';
+import { useData } from '../context/DataContext';
 import { Avatar } from '../components/common/Avatar';
 import { Heart, MessageCircle, UserPlus, AtSign } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';

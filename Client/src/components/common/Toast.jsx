@@ -1,5 +1,4 @@
-import React from 'react';
-import { useData } from '../../context/DataCOntext';
+import { useData } from '../../context/DataContext';
 import { CheckCircle2, AlertCircle, Info } from 'lucide-react';
 
 export const Toast = () => {

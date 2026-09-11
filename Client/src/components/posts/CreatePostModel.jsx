@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal } from "../common/Modal";
 import { Button } from "../common/Button";
-import { useData } from "../../context/DataCOntext";
+import { useData } from "../../context/DataContext";
 import { MapPin, X, Plus, Upload, Smile } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Heart, MessageCircle, PlusSquare } from 'lucide-react';
-// import { useData } from '../../context/DataCOntext';
+// import { useData } from '../../context/DataContext';
 import { BsInstagram } from "react-icons/bs";
 
 export const Header = ({ onCreatePostClick }) => {

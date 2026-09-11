@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useData } from '../context/DataCOntext';
+import  { useState } from 'react';
+import { useData } from '../context/DataContext';
 import { UserCard } from '../components/users/UserCard';
 import { Search as SearchIcon, X, History, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';

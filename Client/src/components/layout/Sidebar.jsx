@@ -17,7 +17,7 @@ import {
 import { BsInstagram } from "react-icons/bs";
 
 import { useAuth } from '../../context/AuthContext';
-import { useData } from '../../context/DataCOntext';
+import { useData } from '../../context/DataContext';
 import { Avatar } from '../common/Avatar';
 import { UserCard } from '../users/UserCard';
 import { useClerk } from "@clerk/clerk-react";

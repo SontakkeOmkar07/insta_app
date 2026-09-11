@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Flame, Hash, Music, UserPlus, Sparkles, Eye, Heart } from 'lucide-react';
-import { useData } from '../../context/DataCOntext';
+import { useData } from '../../context/DataContext';
 import { musicService } from '../../services/musicService';
 import { songService } from '../../services/songService';
 

@@ -8,7 +8,7 @@ import { FollowersModal } from '../components/users/FollowersModal';
 import { CommentSection } from '../components/posts/CommentSection';
 import { Grid, Bookmark, Tag } from 'lucide-react';
 import { Button } from '../components/common/Button';
-import { useData } from '../context/DataCOntext';
+import { useData } from '../context/DataContext';
 
 export const Profile = () => {
   const { username: paramUsername } = useParams();

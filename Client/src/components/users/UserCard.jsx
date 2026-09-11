@@ -1,7 +1,7 @@
 import React from 'react';
 import { Avatar } from '../common/Avatar';
 import { useAuth } from '../../context/AuthContext';
-import { useData } from '../../context/DataCOntext';
+import { useData } from '../../context/DataContext';
 
 export const UserCard = ({ user, onClick, showFollowButton = true }) => {
   const { currentUser } = useAuth();

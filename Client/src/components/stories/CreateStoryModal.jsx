@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Modal } from '../common/Modal';
 import { Button } from '../common/Button';
 import { Avatar } from '../common/Avatar';
-import { useData } from '../../context/DataCOntext';
+import { useData } from '../../context/DataContext';
 import { storyService } from '../../services/storyService';
 import {
   Image as ImageIcon,

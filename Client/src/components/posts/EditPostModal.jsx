@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Modal } from '../common/Modal';
 import {Button} from "../common/Button"
-import { useData } from '../../context/DataCOntext.jsx';
+import { useData } from '../../context/DataContext';
 
 export const EditPostModal = ({ post, isOpen, onClose }) => {
   const { updatePost } = useData();

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Modal } from "../common/Modal";
 import { Avatar } from "../common/Avatar";
-import { useData } from "../../context/DataCOntext.jsx";
+import { useData } from "../../context/DataContext";
 import { useAuth } from "../../context/AuthContext";
 import { Heart, Trash2, X } from "lucide-react";
 

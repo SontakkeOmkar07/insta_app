@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { useData } from '../../context/DataCOntext';
+import { useData } from '../../context/DataContext';
 import { Avatar } from '../common/Avatar';
 import { Button } from '../common/Button';
 

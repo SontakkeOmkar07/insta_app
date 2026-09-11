@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAuth } from '../../context/AuthContext';
-import { useData } from '../../context/DataCOntext';
+import { useData } from '../../context/DataContext';
 import { StoryCircle } from './StoryCircle';
 import { useNavigate } from 'react-router-dom';
 
