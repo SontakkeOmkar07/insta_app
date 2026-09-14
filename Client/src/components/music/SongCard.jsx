@@ -9,6 +9,8 @@ export const SongCard = ({
   onSelectSong,
   isSelected,
 }) => {
+
+
   return (
     <div
       className={`group flex items-center justify-between p-3 rounded-2xl border transition-all ${

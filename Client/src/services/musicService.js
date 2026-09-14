@@ -3,34 +3,117 @@ let currentPlayingSongId = null;
 
 const stopAudio = () => {
   if (currentAudio) {
+
+    const audio = currentAudio;
     currentAudio.pause();
+
+    // remove source completely
+    currentAudio.removeAttribute("src");
     currentAudio.currentTime = 0;
     currentAudio.src = '';
+    currentAudio.load();
     currentAudio = null;
+
+     if (!audio) return;
+
+     try {
+
+          audio.pause();
+
+
+           // Remove all event listeners that we added.
+    audio.onloadedmetadata = null;
+    audio.onerror = null;
+    audio.onended = null;
+    audio.oncanplay = null;
+
+        // Completely remove the source.
+    audio.removeAttribute("src");
+    audio.load();
+      
+     } catch (error) {
+          console.error("Error while stopping audio:", error);
+
+      
+     }
   }
   currentPlayingSongId = null;
 };
 
-const createAudio = (song) => {
-  if (!song?.audioUrl) return false;
+const createAudio = async (song) => {
+  if (!song?.audioUrl){ 
+
+        console.error("Audio URL is missing:", song);
+
+    return false};
 
   const songId = song.id || song.songId || song.audioUrl;
+
+
   currentPlayingSongId = songId;
-  currentAudio = new Audio(song.audioUrl);
+
+  currentAudio = new Audio();
+  currentAudio.src = song.audioUrl;
+  currentAudio.preload = "auto";
   currentAudio.loop = true;
   currentAudio.volume = 0.6;
-  currentAudio.currentTime = Number(song.startSec || 0);
-  currentAudio.play().catch((error) => {
-    console.warn('Audio could not start:', error);
+
+  const startSec = Number(song.startSec || 0);
+
+
+  currentAudio.addEventListener("loadedmetadata", () => {
+    if (
+      Number.isFinite(startSec) &&
+      startSec >= 0 &&
+      startSec < currentAudio.duration
+    ) {
+      currentAudio.currentTime = startSec;
+    }
   });
-  return true;
+
+    currentAudio.addEventListener("error", () => {
+    console.error("Audio failed to load.");
+    console.error("URL:", song.audioUrl);
+    console.error("Audio element error:", currentAudio.error);
+
+    currentPlayingSongId = null;
+    currentAudio = null;
+  });
+
+ currentAudio.addEventListener("ended", () => {
+    if (currentAudio?.loop) return;
+
+    currentPlayingSongId = null;
+  });
+
+
+    console.log("Trying to play:", song.audioUrl);
+
+  
+     currentAudio
+    .play()
+    .then(() => {
+      console.log("Audio started successfully:", song.title);
+    })
+    .catch((error) => {
+      console.error("Audio could not start:", error);
+    });
+
+
+    return true;
 };
 
 export const musicService = {
   playPreview(song) {
-    const songId = typeof song === 'string' ? song : song?.id || song?.songId;
+    if (!song) return;
+    
+    const songId = song.id || song.songId || song.audioUrl;
+    if (!songId) {
+      console.error("Song ID is missing:", song);
 
-    if (!songId) return;
+      return;
+    }
+
     if (currentPlayingSongId === songId) {
       stopAudio();
       return;
@@ -43,8 +126,16 @@ export const musicService = {
   // Story playback must not toggle off when React refreshes the story object
   // after recording a view.
   playStory(song) {
+
+    if ( !song?.audioUrl) {
+
+            console.error("Story audio URL is missing:", song);
+
+      return;
+    }
+
     const songId = song?.id || song?.songId || song?.audioUrl;
-    if (!songId || !song?.audioUrl) return;
+    
     if (currentPlayingSongId === songId && currentAudio) return;
 
     stopAudio();

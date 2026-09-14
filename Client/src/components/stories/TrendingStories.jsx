@@ -133,7 +133,7 @@ export const TrendingStories = () => {
               {trendingSongs.map((song) => (
                 <div
                   key={song.id}
-                  onClick={() => musicService.playPreview(song.id)}
+                  onClick={() => musicService.playPreview(song)}
                   className="flex items-center gap-3 p-2 rounded-2xl hover:bg-neutral-100 dark:hover:bg-neutral-700/60 transition-colors cursor-pointer"
                 >
                   <img src={song.albumArt} alt={song.title} className="w-10 h-10 rounded-xl object-cover" />
